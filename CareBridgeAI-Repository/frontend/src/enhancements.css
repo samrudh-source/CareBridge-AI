@@ -1,0 +1,194 @@
+.mode button {
+  white-space: nowrap;
+}
+
+.mode button:disabled,
+.workflow:disabled,
+.submit:disabled {
+  cursor: not-allowed;
+}
+
+.workflow:focus-visible,
+.mode button:focus-visible,
+.submit:focus-visible,
+.source-link:focus-visible,
+.empty-state button:focus-visible,
+.error-panel button:focus-visible {
+  outline: 3px solid #65d9ca;
+  outline-offset: 2px;
+}
+
+.status.live {
+  background: #e0f5f1;
+  color: #007d76;
+}
+
+.result-count {
+  margin: 12px 0 0;
+  color: #53657c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.provider-details {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.provider-details div {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.7fr) minmax(0, 1.5fr);
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.provider-details dt {
+  color: #75849a;
+}
+
+.provider-details dd {
+  margin: 0;
+  color: #354a62;
+  overflow-wrap: anywhere;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 0 12px;
+  color: #007d76;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+.timestamp {
+  flex-wrap: wrap;
+}
+
+.source-date {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.verification-status {
+  margin-top: 10px;
+}
+
+.spinner {
+  animation: carebridge-spin 1s linear infinite;
+}
+
+.error-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #f0c9cc;
+  border-radius: 8px;
+  background: #fff4f4;
+}
+
+.error-panel p {
+  margin: 0;
+  color: #ad3e47;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.error-panel button,
+.empty-state button {
+  flex-shrink: 0;
+  padding: 8px 11px;
+  border: 1px solid #d8e2e9;
+  border-radius: 6px;
+  background: white;
+  color: #334b63;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 28px;
+  border: 1px dashed #cad6df;
+  border-radius: 11px;
+  background: white;
+  text-align: center;
+}
+
+.empty-state > svg {
+  color: #009f96;
+}
+
+.empty-state h3 {
+  margin: 0;
+  font: 700 15px Manrope;
+}
+
+.empty-state p {
+  max-width: 460px;
+  margin: 0 0 5px;
+  color: #718197;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@keyframes carebridge-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .sectionhead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .mode {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .mode small {
+    width: 100%;
+    padding: 4px 7px 0;
+  }
+
+  .mode button {
+    flex: 1;
+    padding: 8px 9px;
+    font-size: 10px;
+  }
+
+  .error-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .provider-details div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2s;
+  }
+}
